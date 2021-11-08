@@ -18,7 +18,7 @@ public class Feed {
     }
 
     //A public method called consume that decreases feed amount by 1, and show error if there is no food bins left
-    public void static consume() {
+    public static void consume() {
         if (binCount > 0) {
             binCount--;
         }else{

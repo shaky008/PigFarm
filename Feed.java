@@ -3,32 +3,37 @@ package Farm;
 public class Feed {
 
     //A private static int variable keeping track of the amount of feed that the farmer has in terms of number of bins
-    private static int binCount;
+    private String feedName;
+    private boolean isFull;
+    private double weight;
 
-    private final String feedName;
-
-    //A static public method named getAmount() that returns how many bins of feed are left
-    public static int getAmount() {
-        binCount = 0;
-        return binCount;
-    }
-
+//    getters and setters
     public String getFeedName() {
         return feedName;
     }
 
-    //A public method called consume that decreases feed amount by 1, and show error if there is no food bins left
-    public static void consume() {
-        if (binCount > 0) {
-            binCount--;
-        }else{
-            System.out.println("There is no food bins left to feed.");
-        }
+    public void setFeedName(String feedName) {
+        this.feedName = feedName;
     }
-    //A constructor that accepts two parameters: A String type for name of feed and int value for no of bins
-    Feed(String feedName_f, int binCount_b) {
+
+    public boolean isFull() {
+        return isFull;
+    }
+
+    public void setFull(boolean full) {
+        isFull = full;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+    //A constructor that accepts a parameters: A String type for name of feed
+    Feed(String feedName_f) {
         feedName = feedName_f;
-        binCount = binCount + binCount_b;
     }
     // A public method called add which receives an int value and adds that to the number of bins
     public void add(int addBin) {

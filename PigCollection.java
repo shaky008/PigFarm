@@ -6,17 +6,15 @@ public class PigCollection {
     private int initialSize = 5;
     private static Pig[] pigArray;
 
-    public PigCollection(Pig[] pigArray) {
-        this.pigArray = new Pig[initialSize];
+    public PigCollection() {
+        pigArray = new Pig[initialSize];
     }
 //increase the size of array
     private void expand() {
         int newInitialSize = initialSize *2;
         Pig[] newArray = new Pig[newInitialSize];
 
-        for (int i = 0; i < size; i++) {
-            newArray[i] = pigArray[i];
-        }
+        if (size >= 0) System.arraycopy(pigArray, 0, newArray, 0, size);
        initialSize = newInitialSize;
         pigArray = newArray;
     }
@@ -27,22 +25,6 @@ public class PigCollection {
         }
         pigArray[size] = add;
         size++;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public int getInitialSize() {
-        return initialSize;
-    }
-
-    public void setInitialSize(int initialSize) {
-        this.initialSize = initialSize;
     }
 
     public static Pig[] getPigArray() {
@@ -59,16 +41,16 @@ public class PigCollection {
     }
 //return array of all pigs
     public String getPigList() {
-        String string = "";
+        StringBuilder string = new StringBuilder();
 
         for(int i = 0; i < size; i++) {
-            string += pigArray[i].getName() + ", ";
+            string.append(pigArray[i].getName()).append(", ");
         }
-        if (!string.equals("")) {
-            string = "[" + string.substring(0, string.length() -2) + "}";
+        if (!string.toString().equals("")) {
+            string = new StringBuilder("[" + string.substring(0, string.length() - 2) + "}");
         }else {
-            string = "[]";
+            string = new StringBuilder("[]");
         }
-        return string;
+        return string.toString();
     }
 }

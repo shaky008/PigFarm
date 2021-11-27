@@ -1,33 +1,39 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package Farm;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 public class Pig {
-
-    private static int track = 0;   // a private static variable keeping track of the number of pig in the farm
-
+    private static int track = 0;
     private boolean isFed;
-    private String name, color, sex, PigID;
-    private Date dateOfBirth;
-//getter & setters
-    
+    private String name;
+    private String color;
+    private char sex;
+    private String PigID;
+    private LocalDate dateOfBirth;
+
     public static int getTrack() {
         return track;
     }
-    
+
     public static void setTrack(int track) {
         Pig.track = track;
     }
 
     public boolean isFed() {
-        return isFed;
+        return this.isFed;
     }
 
     public void setFed(boolean fed) {
-        isFed = fed;
+        this.isFed = fed;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -35,46 +41,45 @@ public class Pig {
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public void setColor(String color) {
         this.color = color;
     }
 
-    public String getSex() {
-        return sex;
+    public char getSex() {
+        return this.sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(char sex) {
         this.sex = sex;
     }
 
     public String getPigID() {
-        return PigID;
+        return this.PigID;
     }
 
     public void setPigID(String pigID) {
-        PigID = pigID;
+        this.PigID = pigID;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public LocalDate getDateOfBirth() {
+        return this.dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    //Color of pig, name of pig, sex adn date of birth of the pigs which is a string set when initialized using the constructor
-    Pig(String name_n, String color_c, String sex_s, Date dateOfBirth_d, String PigID_p) {
-        name = name_n;
-        sex = sex_s;
-        color = color_c;
-        dateOfBirth = dateOfBirth_d;
-        PigID = PigID_p;
+    Pig(String name_n, String color_c, char sex_s, LocalDate dateOfBirth_d, String PigID_p) {
+        this.name = name_n;
+        this.color = color_c;
+        this.sex = sex_s;
+        this.dateOfBirth = dateOfBirth_d;
+        this.PigID = PigID_p;
     }
-    //A method feed that accepts an object of type Feed and calls the method
+
     public void feed(Feed foodNo) {
         foodNo.consume();
     }

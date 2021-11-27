@@ -96,7 +96,7 @@ import java.time.LocalDate;
 
 //         Menu screen
         public static void taskMenu() {
-            System.out.println("Please selct one of the below:");
+            System.out.println("Please select one of the below:");
             System.out.println("1.\tAdd Pig \n2. \tAdd Feed\n3. \tFeed Pigs\n4. \tReport\n5. \tExit");
         }
 

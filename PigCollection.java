@@ -4,7 +4,7 @@ public class PigCollection {
 //variables
     private int size;
     private int initialSize = 5;
-    private Pig[] pigArray;
+    private static Pig[] pigArray;
 
     public PigCollection(Pig[] pigArray) {
         this.pigArray = new Pig[initialSize];
@@ -18,6 +18,7 @@ public class PigCollection {
             newArray[i] = pigArray[i];
         }
        initialSize = newInitialSize;
+        pigArray = newArray;
     }
 //         A method called addPig for adding a new pig but it does not have a method for removing pig
     public void addPig(Pig add) {
@@ -27,7 +28,28 @@ public class PigCollection {
         pigArray[size] = add;
         size++;
     }
-// return the no of pig given
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getInitialSize() {
+        return initialSize;
+    }
+
+    public void setInitialSize(int initialSize) {
+        this.initialSize = initialSize;
+    }
+
+    public static Pig[] getPigArray() {
+        return pigArray;
+    }
+
+    // return the no of pig given
     public int getPigCount() {
         return size;
     }

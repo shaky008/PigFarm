@@ -1,5 +1,4 @@
-package comp;
-
+package Farm;
 
 public class FeedCollection {
 
@@ -44,9 +43,19 @@ public Feed getNextBin() {
     for (int i = 0; i < SIZE; i++) {
         if (feedArray[i] != null && feedArray[i].isFull()) {
             return feedArray[i];
+
         }
     }
     return null;
 }
 
+    public void setFeedNumber(int numBin, Feed newFeed) {
+    }
+
+    public FeedCollection() {
+    }
+
+    public int getSize() {
+        return SIZE;
+    }
 }

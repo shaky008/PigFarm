@@ -18,7 +18,7 @@ public class FeedCollection {
 
     public void setFeedlocation (int location, Feed feed) {
         try{
-            feedArray[location] = feed;
+            feed = feedArray[location]  ;
         } catch (Exception e) {
             System.out.println("All the bins are full. \nMaximum size: " + SIZE);
         }

@@ -18,7 +18,7 @@ public class PigCollection {
        initialSize = newInitialSize;
         pigArray = newArray;
     }
-//         A method called addPig for adding a new pig but it does not have a method for removing pig
+//A method called addPig for adding a new pig but it does not have a method for removing pig
     public void addPig(Pig add) {
         if (size >= initialSize) {
             expand();
@@ -31,7 +31,7 @@ public class PigCollection {
         return pigArray;
     }
 
-    // return the no of pig given
+// return the no of pig given
     public int getPigCount() {
         return size;
     }
